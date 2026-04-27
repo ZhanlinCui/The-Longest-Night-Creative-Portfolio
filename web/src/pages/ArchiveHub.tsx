@@ -97,7 +97,15 @@ export function ArchiveHub() {
             ) : null}
           </div>
         </aside>
-        <section className="relative flex min-h-[600px] w-full items-center justify-center bg-surface radial-bg md:w-2/3 lg:w-3/4">
+        <section className="radial-bg relative flex min-h-[600px] w-full items-center justify-center overflow-hidden bg-surface md:w-2/3 lg:w-3/4">
+          <img
+            src="/media/Scene5/5.2.png"
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-20 mix-blend-screen"
+            aria-hidden
+          />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(12,14,18,0.25)_0%,rgba(12,14,18,0.65)_48%,rgba(12,14,18,0.9)_100%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-surface/35 via-transparent to-surface/20" />
           <div className="orbit-line h-[300px] w-[300px]" />
           <div className="orbit-line h-[500px] w-[500px]" />
           <div className="orbit-line h-[700px] w-[700px]" />
