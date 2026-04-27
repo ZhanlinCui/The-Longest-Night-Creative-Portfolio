@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scene IV — Read the Sun | The Speculative Archive</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#afecff",
+                    "secondary": "#aaccd7",
+                    "on-surface-variant": "#bfc8cc",
+                    "on-background": "#e2e2e8",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#0b677a",
+                    "on-tertiary-fixed": "#271900",
+                    "on-tertiary": "#412d00",
+                    "secondary-fixed": "#c5e8f4",
+                    "surface-dim": "#111318",
+                    "surface": "#111318",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "on-surface": "#e2e2e8",
+                    "on-secondary": "#11353e",
+                    "outline": "#899296",
+                    "inverse-surface": "#e2e2e8",
+                    "on-primary-fixed-variant": "#004e5d",
+                    "surface-container-low": "#1a1c20",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ffd998",
+                    "on-secondary-fixed-variant": "#2a4b55",
+                    "primary-container": "#a0e9ff",
+                    "surface-bright": "#37393e",
+                    "surface-variant": "#333539",
+                    "on-secondary-container": "#98bbc6",
+                    "on-primary-fixed": "#001f27",
+                    "surface-container-highest": "#333539",
+                    "on-secondary-fixed": "#001f27",
+                    "surface-container-high": "#282a2e",
+                    "on-primary-container": "#136b7e",
+                    "surface-tint": "#88d1e7",
+                    "surface-container": "#1e2024",
+                    "inverse-on-surface": "#2f3035",
+                    "secondary-fixed-dim": "#aaccd7",
+                    "on-primary": "#003641",
+                    "tertiary": "#fffaf7",
+                    "on-tertiary-container": "#805b00",
+                    "tertiary-fixed-dim": "#ffba20",
+                    "background": "#111318",
+                    "outline-variant": "#3f484b",
+                    "surface-container-lowest": "#0c0e12",
+                    "tertiary-fixed": "#ffdea8",
+                    "on-error": "#690005",
+                    "secondary-container": "#2a4b55",
+                    "primary-fixed-dim": "#88d1e7",
+                    "primary": "#f4fcff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom styles for specific aesthetic requirements that are hard to do inline */
+        .glass-panel {
+            background-color: rgba(51, 53, 57, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ghost-border {
+            box-shadow: inset 0 0 0 1px rgba(63, 72, 75, 0.15);
+        }
+        .glow-line-bottom {
+            position: relative;
+        }
+        .glow-line-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #a0e9ff;
+            box-shadow: 0 0 8px #a0e9ff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-line-bottom:hover::after, .glow-line-bottom.active::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 dark:bg-[#111318]/90 backdrop-blur-md shadow-2xl shadow-[#A0E9FF]/5 flex justify-between items-center px-8 h-20">
+<div class="text-lg font-bold tracking-[-0.02em] text-[#f4fcff] font-['Space_Grotesk'] tracking-tight">
+            THE LONGEST NIGHT
+        </div>
+<div class="flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#f4fcff]/5 transition-all duration-300 cursor-pointer active:scale-95 px-3 py-1 rounded-sm" href="#">
+                Return to Archive
+            </a>
+<div class="flex items-center gap-4 text-[#A0E9FF]">
+<button class="hover:bg-[#f4fcff]/5 transition-all duration-300 cursor-pointer active:scale-95 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history_edu</span>
+</button>
+<button class="hover:bg-[#f4fcff]/5 transition-all duration-300 cursor-pointer active:scale-95 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</div>
+<!-- Separation Logic -->
+<div class="bg-gradient-to-b from-[#A0E9FF]/10 to-transparent h-[1px] w-full absolute bottom-0"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 px-6 md:px-12 lg:px-24 pb-24 max-w-[1600px] mx-auto w-full flex flex-col gap-16 relative">
+<!-- Ambient Background Texture -->
+<div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,_rgba(160,233,255,0.03),_transparent_50%)]"></div>
+<!-- Header / Hero Segment -->
+<header class="max-w-4xl relative z-10">
+<div class="flex items-center gap-4 mb-6">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Scene IV</span>
+<span class="w-8 h-[1px] bg-outline-variant"></span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Evidence and public trust</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-light text-primary-fixed tracking-[-0.02em] mb-8 leading-[1.05]">
+                Read the Sun.
+            </h1>
+<div class="pl-6 border-l-[2px] border-primary-container/20">
+<p class="font-body text-xl md:text-2xl text-on-surface-variant font-light leading-[1.6]">
+                    What do people do when evidence arrives too late, or not clearly enough?
+                </p>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10">
+<!-- Main Data Interface (Media Placeholder) -->
+<section class="md:col-span-8 bg-surface-container-low rounded-sm ghost-border relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity" data-alt="abstract dark interface displaying scientific telemetry data, dark charcoal background with faint glowing technical UI elements" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOAqRglBUGqszfnjoOv1CUwRNkhAy73NYR2h5x7cvQ0n4rMZIvrCEAxH2kWS5ATq8G3WZ-LA-a1LimVyXrCuC39ExxTINYvwuwiAJJ4i2uGWYTV19QYu7xJ7hKnA4L5V_Rnq3bD3wjCMRD1bYKRR4WnXD5L70Gv8IdrnNBW_pDM82WDjrrZWBx0-VCSfhhhqR-wVKfPfT5Urc4tBBAYK1hnGi2dpd90NZ7KD-lMyUH2t04iqkEb5Rie94SE0jVigaRTR8OgEjoeY8');">
+</div>
+<!-- Interface Overlay -->
+<div class="relative z-10 p-8 flex flex-col h-full min-h-[400px]">
+<div class="flex justify-between items-start mb-auto">
+<div class="font-label text-xs tracking-widest text-outline uppercase">Subterranean Telemetry Feed // TR-88</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-mono text-xs text-error">SIGNAL ANOMALY DETECTED</span>
+</div>
+</div>
+<div class="mt-auto grid grid-cols-3 gap-4 border-t border-outline-variant/30 pt-6">
+<div>
+<div class="font-label text-xs text-on-surface-variant mb-1">Solar Flux Index</div>
+<div class="font-mono text-2xl text-primary-fixed">142.8</div>
+</div>
+<div>
+<div class="font-label text-xs text-on-surface-variant mb-1">Interference Level</div>
+<div class="font-mono text-2xl text-tertiary-container">High</div>
+</div>
+<div>
+<div class="font-label text-xs text-on-surface-variant mb-1">Data Confidence</div>
+<div class="font-mono text-2xl text-error">42%</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Science Note Context -->
+<aside class="md:col-span-4 bg-surface-container-lowest p-8 rounded-sm flex flex-col">
+<div class="flex items-center gap-2 mb-6 text-secondary">
+<span class="material-symbols-outlined text-sm">science</span>
+<h3 class="font-headline text-sm tracking-wide uppercase">Scientific Uncertainty</h3>
+</div>
+<div class="prose prose-invert prose-sm font-body text-on-surface-variant leading-[1.7]">
+<p class="mb-4">
+                        In scenarios of unprecedented astronomical events, the signal-to-noise ratio rapidly degrades. The sheer volume of anomalous data often outpaces the computational capacity to build a coherent consensus model.
+                    </p>
+<p>
+                        When official channels filter data to prevent panic, the epistemological gap is frequently filled by decentralized, less rigorous observation networks, creating fractured realities based on conflicting telemetry.
+                    </p>
+</div>
+</aside>
+<!-- Interaction: Evidence Cards -->
+<section class="md:col-span-12 mt-8">
+<h3 class="font-headline text-lg text-primary-fixed mb-6 tracking-tight">Available Telemetry Sources <span class="text-outline text-sm ml-2">(Select Two)</span></h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-high p-6 rounded-sm cursor-pointer hover:bg-surface-container-highest transition-colors duration-300 flex flex-col h-full glow-line-bottom">
+<div class="flex justify-between items-center mb-4">
+<span class="material-symbols-outlined text-outline">account_balance</span>
+<span class="font-mono text-[10px] text-outline">SRC-01</span>
+</div>
+<h4 class="font-body font-medium text-on-surface mb-2">Official Model</h4>
+<p class="font-label text-sm text-on-surface-variant leading-relaxed">Aggregated data from orbital observatories. Heavily sanitized. Indicates a manageable coronal mass ejection.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-high p-6 rounded-sm cursor-pointer hover:bg-surface-container-highest transition-colors duration-300 flex flex-col h-full glow-line-bottom">
+<div class="flex justify-between items-center mb-4">
+<span class="material-symbols-outlined text-outline">satellite</span>
+<span class="font-mono text-[10px] text-outline">SRC-02</span>
+</div>
+<h4 class="font-body font-medium text-on-surface mb-2">Amateur Telescope</h4>
+<p class="font-label text-sm text-on-surface-variant leading-relaxed">Crowdsourced optical observations from the dark side. High noise, but raw. Suggests structural instability in the photosphere.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-high p-6 rounded-sm cursor-pointer hover:bg-surface-container-highest transition-colors duration-300 flex flex-col h-full glow-line-bottom">
+<div class="flex justify-between items-center mb-4">
+<span class="material-symbols-outlined text-outline">satellite_alt</span>
+<span class="font-mono text-[10px] text-outline">SRC-03</span>
+</div>
+<h4 class="font-body font-medium text-on-surface mb-2">NGO Probe</h4>
+<p class="font-label text-sm text-on-surface-variant leading-relaxed">Unauthorized near-sun probe data leaked via encrypted channels. Incomplete packets, extreme thermal readings.</p>
+</div>
+</div>
+</section>
+<!-- Decision Output -->
+<section class="md:col-span-12 mt-12 flex flex-col items-start border-t border-outline-variant/15 pt-12">
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-6">Commit to Action</h3>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container/10 text-on-surface hover:bg-primary-container/20 px-8 py-3 rounded-sm font-headline tracking-wide transition-all duration-300 text-sm">
+                        Trust Migration
+                    </button>
+<button class="bg-primary-container/10 text-on-surface hover:bg-primary-container/20 px-8 py-3 rounded-sm font-headline tracking-wide transition-all duration-300 text-sm">
+                        Return Earth
+                    </button>
+<button class="bg-surface text-error border border-error/30 hover:bg-error/5 px-8 py-3 rounded-sm font-headline tracking-wide transition-all duration-300 text-sm relative overflow-hidden group">
+<span class="relative z-10">Delay Decision</span>
+<div class="absolute inset-0 bg-error/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-12 mt-auto flex flex-col md:flex-row justify-between items-center px-12 gap-6 border-t border-[#3f484b]/15 dark:bg-[#111318]">
+<div class="font-['Space_Grotesk'] text-sm text-[#e2e2e8]">
+            © THE SPECULATIVE ARCHIVE // SECTOR 07
+        </div>
+<div class="flex gap-6 font-['Inter'] text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Methodology</a>
+<a class="text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Data Privacy</a>
+<a class="text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Technical Records</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-on-surface antialiased;
+  }
+
+  body {
+    @apply m-0 min-h-screen font-body;
+  }
+
+  #root {
+    @apply flex min-h-screen flex-col;
+  }
+}
+
+@layer utilities {
+  .ghost-border {
+    border: 1px solid rgba(63, 72, 75, 0.15);
+  }
+
+  .glass-panel {
+    background: rgba(51, 53, 57, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-line {
+    box-shadow: 0 0 8px #a0e9ff;
+  }
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+}
+
+.radial-bg {
+  background: radial-gradient(circle at center, rgba(160, 233, 255, 0.05) 0%, transparent 70%);
+}
+
+.orbit-line {
+  border: 1px solid rgba(63, 72, 75, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Speculative Archive - Build a Small World</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#afecff",
+                        "secondary": "#aaccd7",
+                        "on-surface-variant": "#bfc8cc",
+                        "on-background": "#e2e2e8",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#0b677a",
+                        "on-tertiary-fixed": "#271900",
+                        "on-tertiary": "#412d00",
+                        "secondary-fixed": "#c5e8f4",
+                        "surface-dim": "#111318",
+                        "surface": "#111318",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "on-surface": "#e2e2e8",
+                        "on-secondary": "#11353e",
+                        "outline": "#899296",
+                        "inverse-surface": "#e2e2e8",
+                        "on-primary-fixed-variant": "#004e5d",
+                        "surface-container-low": "#1a1c20",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#ffd998",
+                        "on-secondary-fixed-variant": "#2a4b55",
+                        "primary-container": "#a0e9ff",
+                        "surface-bright": "#37393e",
+                        "surface-variant": "#333539",
+                        "on-secondary-container": "#98bbc6",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container-highest": "#333539",
+                        "on-secondary-fixed": "#001f27",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-container": "#136b7e",
+                        "surface-tint": "#88d1e7",
+                        "surface-container": "#1e2024",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-fixed-dim": "#aaccd7",
+                        "on-primary": "#003641",
+                        "tertiary": "#fffaf7",
+                        "on-tertiary-container": "#805b00",
+                        "tertiary-fixed-dim": "#ffba20",
+                        "background": "#111318",
+                        "outline-variant": "#3f484b",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary-fixed": "#ffdea8",
+                        "on-error": "#690005",
+                        "secondary-container": "#2a4b55",
+                        "primary-fixed-dim": "#88d1e7",
+                        "primary": "#f4fcff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ghost-border {
+            border: 1px solid rgba(63, 72, 75, 0.15); /* outline-variant at 15% */
+        }
+        .glow-line {
+            box-shadow: 0 0 8px #a0e9ff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav aria-label="Top navigation" class="fixed top-0 w-full z-50 dark:bg-[#111318]/90 backdrop-blur-md font-['Space_Grotesk'] tracking-tight flex justify-between items-center px-8 h-20 shadow-2xl shadow-[#A0E9FF]/5">
+<div class="text-lg font-bold tracking-[-0.02em] text-[#f4fcff]">THE LONGEST NIGHT</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#f4fcff]/5 transition-all duration-300 cursor-pointer active:scale-95 px-3 py-2 rounded-sm text-sm" href="#">Return to Archive</a>
+</div>
+<div class="flex items-center gap-4">
+<span aria-label="History" class="material-symbols-outlined text-[#e2e2e8]/60 hover:text-[#A0E9FF] cursor-pointer hover:bg-[#f4fcff]/5 transition-all duration-300 p-2 rounded-sm">history_edu</span>
+<span aria-label="Account" class="material-symbols-outlined text-[#e2e2e8]/60 hover:text-[#A0E9FF] cursor-pointer hover:bg-[#f4fcff]/5 transition-all duration-300 p-2 rounded-sm">account_circle</span>
+</div>
+<div class="bg-gradient-to-b from-[#A0E9FF]/10 to-transparent h-[1px] w-full absolute bottom-0"></div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative">
+<!-- Ambient Background Effect -->
+<div class="fixed inset-0 pointer-events-none z-[-1] opacity-5 bg-gradient-to-tr from-primary to-primary-container blur-3xl"></div>
+<!-- Left Column: Context & Typography (Asymmetric) -->
+<div class="lg:col-span-5 space-y-12">
+<header>
+<p class="font-label text-label-sm text-secondary uppercase tracking-[0.2em] mb-4">Scene II</p>
+<h1 class="font-headline text-5xl font-bold text-primary-fixed tracking-[-0.02em] leading-tight mb-6">Build a Small World.</h1>
+<p class="font-body text-body-md text-on-surface-variant leading-relaxed">
+                    Can life survive inside a system that is too small?
+                </p>
+</header>
+<!-- Science Note: Archival Chip Style -->
+<section class="bg-surface-container-low p-6 rounded-sm ghost-border relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-outline-variant opacity-30"></div>
+<h3 class="font-headline text-lg text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">science</span>
+                    Closed-Loop Ecology
+                </h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                    In isolation, survival depends on absolute equilibrium. The interplay between nutrient cycling, respiratory gas exchange, and waste decomposition creates a delicate margin for error. A failure in one vector ensures systemic collapse.
+                </p>
+</section>
+<!-- Result Panel: Staged empty or showing Unstable Survival -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-6 rounded-sm mt-8">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label text-xs text-secondary tracking-widest uppercase">System Status</span>
+<span class="material-symbols-outlined text-outline text-sm">monitor_heart</span>
+</div>
+<!-- Simulated Result -->
+<div class="text-2xl font-headline text-primary-container mb-2">Unstable Survival</div>
+<p class="font-body text-xs text-on-surface-variant">Margin of error: &lt; 2.4% variance detected in O2 levels.</p>
+</div>
+</div>
+<!-- Right Column: Interactive Biosphere (Glassmorphism & Depth) -->
+<div class="lg:col-span-7 relative">
+<!-- Biosphere Display Area -->
+<div class="relative w-full aspect-square md:aspect-[4/3] bg-surface-container-low rounded-sm ghost-border overflow-hidden flex items-center justify-center p-8 group">
+<!-- Background Image (Suspended Glass Biosphere) -->
+<div class="absolute inset-0 z-0 opacity-80 mix-blend-screen" data-alt="Macro photography of a delicate glass sphere containing glowing green algae and tiny plants, suspended in a dark, atmospheric void with soft blue-green lighting and floating particles." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDglW4wGY03nm3V2vQnDCX8CgM8ZgLB5auMjshB3sZHzFDEJn9TxQOQrKvx5S7FOGm539zqfVLuEguCeMDLn2j4R7gwR4UlB8VSR1-Ur3PaeXEr--JIyKnED0su2WpHP5jLsdoCaimyYJIL7a8YzxdOczxLoxFTjD-H_PEhHsDmpLWgtA5nSBbVnEDJZdvhFVtSMRgstXlQbBscqaeA0QcRJ9p_4XewTUyxfZC4i69GfGKRhVerVKMGs7VYiTKZlflao4XtH1Z8xJs'); background-size: cover; background-position: center;">
+</div>
+<!-- Vignette Overlay -->
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-surface via-transparent to-surface/40 pointer-events-none"></div>
+<!-- Central Focus Element (Optional UI overlay on the sphere) -->
+<div class="relative z-20 border border-primary-container/30 w-48 h-48 rounded-full flex items-center justify-center group-hover:border-primary-container/60 transition-colors duration-700">
+<div class="w-full h-[1px] bg-primary-container/20 absolute top-1/2 left-0"></div>
+<div class="h-full w-[1px] bg-primary-container/20 absolute left-1/2 top-0"></div>
+</div>
+<!-- Floating Metadata Labels -->
+<div class="absolute bottom-4 left-4 z-20 flex flex-col gap-1">
+<span class="font-label text-[10px] text-primary-container tracking-widest uppercase bg-surface/80 px-2 py-1 rounded-sm backdrop-blur-sm">ID: ECO-07.A</span>
+<span class="font-label text-[10px] text-secondary tracking-widest uppercase bg-surface/80 px-2 py-1 rounded-sm backdrop-blur-sm">Vol: 1.2L</span>
+</div>
+</div>
+<!-- Interaction: Resource Allocation -->
+<div class="mt-6 bg-surface-variant/40 backdrop-blur-md p-6 rounded-sm ghost-border">
+<h4 class="font-label text-xs text-on-surface uppercase tracking-[0.1em] mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+                    Resource Allocation Parameters
+                </h4>
+<div class="space-y-6">
+<!-- Slider 1 -->
+<div class="flex items-center gap-4">
+<span class="font-label text-xs text-secondary w-28 shrink-0">Photosynthesis</span>
+<div class="flex-grow h-[2px] bg-outline-variant relative rounded-full">
+<div class="absolute top-0 left-0 h-full w-[60%] bg-primary-container glow-line rounded-full"></div>
+<div class="absolute top-1/2 left-[60%] -translate-y-1/2 w-3 h-3 bg-primary rounded-sm shadow-[0_0_8px_#a0e9ff] cursor-ew-resize"></div>
+</div>
+<span class="font-body text-xs text-on-surface w-8 text-right font-mono">60%</span>
+</div>
+<!-- Slider 2 -->
+<div class="flex items-center gap-4">
+<span class="font-label text-xs text-secondary w-28 shrink-0">Decomposition</span>
+<div class="flex-grow h-[2px] bg-outline-variant relative rounded-full">
+<div class="absolute top-0 left-0 h-full w-[35%] bg-primary-container rounded-full"></div>
+<div class="absolute top-1/2 left-[35%] -translate-y-1/2 w-3 h-3 bg-secondary rounded-sm cursor-ew-resize"></div>
+</div>
+<span class="font-body text-xs text-on-surface w-8 text-right font-mono">35%</span>
+</div>
+<!-- Slider 3 -->
+<div class="flex items-center gap-4">
+<span class="font-label text-xs text-secondary w-28 shrink-0">Circulation</span>
+<div class="flex-grow h-[2px] bg-outline-variant relative rounded-full">
+<div class="absolute top-0 left-0 h-full w-[80%] bg-primary-container rounded-full"></div>
+<div class="absolute top-1/2 left-[80%] -translate-y-1/2 w-3 h-3 bg-secondary rounded-sm cursor-ew-resize"></div>
+</div>
+<span class="font-body text-xs text-on-surface w-8 text-right font-mono">80%</span>
+</div>
+</div>
+</div>
+<!-- Scene Navigation (Local) -->
+<div class="mt-8 flex justify-between items-center border-t border-outline-variant/15 pt-6">
+<a class="group flex items-center gap-2 text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_left</span>
+<span class="font-label text-xs tracking-widest uppercase">Scene I</span>
+</a>
+<a class="group flex items-center gap-2 text-secondary hover:text-primary transition-colors" href="#">
+<span class="font-label text-xs tracking-widest uppercase">Scene III</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_right</span>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto dark:bg-[#111318] border-t border-[#3f484b]/15 flex flex-col md:flex-row justify-between items-center px-12 gap-6">
+<div class="font-['Space_Grotesk'] text-sm text-[#e2e2e8]">
+            © THE SPECULATIVE ARCHIVE // SECTOR 07
+        </div>
+<div class="flex flex-wrap justify-center gap-6 font-['Inter'] text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Methodology</a>
+<a class="text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Data Privacy</a>
+<a class="text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Technical Records</a>
+</div>
+</footer>
+</body></html>

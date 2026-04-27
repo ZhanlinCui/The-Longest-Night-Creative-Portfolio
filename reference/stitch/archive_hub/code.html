@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Longest Night - Archive Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#afecff",
+                        "secondary": "#aaccd7",
+                        "on-surface-variant": "#bfc8cc",
+                        "on-background": "#e2e2e8",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#0b677a",
+                        "on-tertiary-fixed": "#271900",
+                        "on-tertiary": "#412d00",
+                        "secondary-fixed": "#c5e8f4",
+                        "surface-dim": "#111318",
+                        "surface": "#111318",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "on-surface": "#e2e2e8",
+                        "on-secondary": "#11353e",
+                        "outline": "#899296",
+                        "inverse-surface": "#e2e2e8",
+                        "on-primary-fixed-variant": "#004e5d",
+                        "surface-container-low": "#1a1c20",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#ffd998",
+                        "on-secondary-fixed-variant": "#2a4b55",
+                        "primary-container": "#a0e9ff",
+                        "surface-bright": "#37393e",
+                        "surface-variant": "#333539",
+                        "on-secondary-container": "#98bbc6",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container-highest": "#333539",
+                        "on-secondary-fixed": "#001f27",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-container": "#136b7e",
+                        "surface-tint": "#88d1e7",
+                        "surface-container": "#1e2024",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-fixed-dim": "#aaccd7",
+                        "on-primary": "#003641",
+                        "tertiary": "#fffaf7",
+                        "on-tertiary-container": "#805b00",
+                        "tertiary-fixed-dim": "#ffba20",
+                        "background": "#111318",
+                        "outline-variant": "#3f484b",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary-fixed": "#ffdea8",
+                        "on-error": "#690005",
+                        "secondary-container": "#2a4b55",
+                        "primary-fixed-dim": "#88d1e7",
+                        "primary": "#f4fcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .radial-bg {
+            background: radial-gradient(circle at center, rgba(160, 233, 255, 0.05) 0%, transparent 70%);
+        }
+        .orbit-line {
+            border: 1px solid rgba(63, 72, 75, 0.3);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .glow-line {
+            box-shadow: 0 0 8px #a0e9ff;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 dark:bg-[#111318]/90 backdrop-blur-md shadow-2xl shadow-[#A0E9FF]/5">
+<div class="flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-6">
+<span class="text-lg font-bold tracking-[-0.02em] text-[#f4fcff] font-['Space_Grotesk']">THE LONGEST NIGHT</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#A0E9FF] border-b border-[#A0E9FF] pb-1 font-['Space_Grotesk'] tracking-tight cursor-pointer active:scale-95 transition-all duration-300" href="#">Return to Archive</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 text-[#A0E9FF]">
+<button class="hover:bg-[#f4fcff]/5 p-2 rounded transition-all duration-300 cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">history_edu</span>
+</button>
+<button class="hover:bg-[#f4fcff]/5 p-2 rounded transition-all duration-300 cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#A0E9FF]/10 to-transparent h-[1px] w-full absolute bottom-0"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20 relative overflow-hidden flex flex-col md:flex-row">
+<!-- Left Panel: Context & Metadata -->
+<aside class="w-full md:w-1/3 lg:w-1/4 p-8 md:p-12 flex flex-col justify-between z-10 border-b md:border-b-0 md:border-r border-outline-variant/15 bg-surface-container-lowest/80 backdrop-blur-sm">
+<div>
+<div class="flex items-center gap-2 mb-8 opacity-60">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="font-label text-sm tracking-wider uppercase">ARCHIVE HUB</span>
+</div>
+<h1 class="font-headline text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] leading-[1.1] text-primary-fixed mb-6">
+                    Every stage of survival became a different kind of problem.
+                </h1>
+<p class="font-body text-base text-on-surface-variant leading-relaxed mb-12 opacity-80">
+                    Select a scene node to access recorded data, simulated environments, and historical logs from the Sector 07 initiative.
+                </p>
+</div>
+<!-- Metadata Block -->
+<div class="space-y-4 pt-8 border-t border-outline-variant/20">
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-outline uppercase tracking-wider">Archive Status</span>
+<span class="font-label text-xs text-primary-container bg-primary-container/10 px-2 py-1 rounded-sm border border-primary-container/20">PARTIAL RECOVERY</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-outline uppercase tracking-wider">Progress</span>
+<span class="font-mono text-sm text-on-surface">0/5 COMPLETED</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-none mt-2 overflow-hidden">
+<div class="h-full bg-primary-container w-[5%]"></div>
+</div>
+</div>
+</aside>
+<!-- Right Panel: Orbital Map Visualization -->
+<section class="w-full md:w-2/3 lg:w-3/4 relative min-h-[600px] flex items-center justify-center bg-surface radial-bg">
+<!-- Abstract Orbital Rings -->
+<div class="orbit-line w-[300px] h-[300px]"></div>
+<div class="orbit-line w-[500px] h-[500px]"></div>
+<div class="orbit-line w-[700px] h-[700px]"></div>
+<div class="orbit-line w-[900px] h-[900px] opacity-50"></div>
+<!-- Central Hub -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-4 h-4 bg-primary-fixed rounded-sm glow-line rotate-45 mb-2"></div>
+<span class="font-label text-[10px] text-primary-fixed tracking-[0.2em] uppercase">Sector 07 Hub</span>
+</div>
+<!-- Nodes -->
+<!-- Node 1: Scene I (Available) -->
+<a class="absolute top-1/2 left-1/2 transform -translate-x-[250px] -translate-y-[150px] group flex items-center gap-4 z-20" href="#">
+<div class="w-12 h-12 bg-primary-container/10 border border-primary-container rounded-sm flex items-center justify-center relative overflow-hidden backdrop-blur-md transition-all duration-300 group-hover:bg-primary-container/20 cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-primary-container/5"></div>
+<span class="font-mono text-primary-fixed font-bold">I</span>
+<!-- Active Indicator -->
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary-container glow-line"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs text-primary-container tracking-wider uppercase mb-1">AVAILABLE</span>
+<span class="font-headline text-lg text-on-surface group-hover:text-primary transition-colors">Stop the Sky</span>
+</div>
+</a>
+<!-- Node 2: Scene II (Locked) -->
+<div class="absolute top-1/2 left-1/2 transform translate-x-[150px] -translate-y-[250px] group flex flex-row-reverse items-center gap-4 z-20 opacity-50">
+<div class="w-10 h-10 bg-surface-container-high border border-outline-variant/30 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-xs text-outline tracking-wider uppercase mb-1">SCENE II</span>
+<span class="font-headline text-base text-on-surface-variant">Build a Small World</span>
+</div>
+</div>
+<!-- Node 3: Scene III (Locked) -->
+<div class="absolute top-1/2 left-1/2 transform translate-x-[350px] translate-y-[50px] group flex flex-row-reverse items-center gap-4 z-20 opacity-50">
+<div class="w-10 h-10 bg-surface-container-high border border-outline-variant/30 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-xs text-outline tracking-wider uppercase mb-1">SCENE III</span>
+<span class="font-headline text-base text-on-surface-variant">Borrow a Giant</span>
+</div>
+</div>
+<!-- Node 4: Scene IV (Locked) -->
+<div class="absolute top-1/2 left-1/2 transform translate-x-[100px] translate-y-[350px] group flex items-center gap-4 z-20 opacity-50">
+<div class="w-10 h-10 bg-surface-container-high border border-outline-variant/30 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs text-outline tracking-wider uppercase mb-1">SCENE IV</span>
+<span class="font-headline text-base text-on-surface-variant">Read the Sun</span>
+</div>
+</div>
+<!-- Node 5: Scene V (Locked) -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-[300px] translate-y-[200px] group flex flex-row-reverse items-center gap-4 z-20 opacity-50">
+<div class="w-10 h-10 bg-surface-container-high border border-outline-variant/30 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-xs text-outline tracking-wider uppercase mb-1">SCENE V</span>
+<span class="font-headline text-base text-on-surface-variant">Count the Generations</span>
+</div>
+</div>
+<!-- Connection Line (Abstract representation) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+<path d="M 300 400 Q 500 200 700 400" fill="none" stroke="#a0e9ff" stroke-dasharray="4 4" stroke-width="1"></path>
+</svg>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto dark:bg-[#111318] border-t border-[#3f484b]/15 z-20 relative bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-6">
+<span class="font-['Space_Grotesk'] text-sm text-[#e2e2e8]">© THE SPECULATIVE ARCHIVE // SECTOR 07</span>
+<nav class="flex gap-6">
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Methodology</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Data Privacy</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-[#3f484b] hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Technical Records</a>
+</nav>
+</div>
+</footer>
+</body></html>

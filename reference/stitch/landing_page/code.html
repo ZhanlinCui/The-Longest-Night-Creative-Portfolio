@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Longest Night - The Speculative Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#afecff",
+                        "secondary": "#aaccd7",
+                        "on-surface-variant": "#bfc8cc",
+                        "on-background": "#e2e2e8",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#0b677a",
+                        "on-tertiary-fixed": "#271900",
+                        "on-tertiary": "#412d00",
+                        "secondary-fixed": "#c5e8f4",
+                        "surface-dim": "#111318",
+                        "surface": "#111318",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "on-surface": "#e2e2e8",
+                        "on-secondary": "#11353e",
+                        "outline": "#899296",
+                        "inverse-surface": "#e2e2e8",
+                        "on-primary-fixed-variant": "#004e5d",
+                        "surface-container-low": "#1a1c20",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#ffd998",
+                        "on-secondary-fixed-variant": "#2a4b55",
+                        "primary-container": "#a0e9ff",
+                        "surface-bright": "#37393e",
+                        "surface-variant": "#333539",
+                        "on-secondary-container": "#98bbc6",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container-highest": "#333539",
+                        "on-secondary-fixed": "#001f27",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-container": "#136b7e",
+                        "surface-tint": "#88d1e7",
+                        "surface-container": "#1e2024",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-fixed-dim": "#aaccd7",
+                        "on-primary": "#003641",
+                        "tertiary": "#fffaf7",
+                        "on-tertiary-container": "#805b00",
+                        "tertiary-fixed-dim": "#ffba20",
+                        "background": "#111318",
+                        "outline-variant": "#3f484b",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary-fixed": "#ffdea8",
+                        "on-error": "#690005",
+                        "secondary-container": "#2a4b55",
+                        "primary-fixed-dim": "#88d1e7",
+                        "primary": "#f4fcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": [
+                            "Space Grotesk"
+                        ],
+                        "body": [
+                            "Inter"
+                        ],
+                        "label": [
+                            "Inter"
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 dark:bg-[#111318]/90 backdrop-blur-md shadow-2xl shadow-[#A0E9FF]/5 flex justify-between items-center px-8 h-20 w-full font-['Space_Grotesk'] tracking-tight text-[#A0E9FF]">
+<div class="text-lg font-bold tracking-[-0.02em] text-[#f4fcff] cursor-pointer active:scale-95">
+            THE LONGEST NIGHT
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#A0E9FF] border-b border-[#A0E9FF] pb-1 hover:bg-[#f4fcff]/5 transition-all duration-300 cursor-pointer active:scale-95" href="#">Return to Archive</a>
+</div>
+<div class="flex gap-4 items-center text-[#A0E9FF]">
+<span class="material-symbols-outlined cursor-pointer active:scale-95 hover:bg-[#f4fcff]/5 transition-all duration-300 p-2 rounded" data-icon="history_edu">history_edu</span>
+<span class="material-symbols-outlined cursor-pointer active:scale-95 hover:bg-[#f4fcff]/5 transition-all duration-300 p-2 rounded" data-icon="account_circle">account_circle</span>
+</div>
+<div class="bg-gradient-to-b from-[#A0E9FF]/10 to-transparent h-[1px] w-full absolute bottom-0 left-0"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col justify-center relative overflow-hidden mt-20">
+<!-- Cinematic Hero Background -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<img alt="Deep space vista with subtle distant stars, icy nebulae, cold blue atmospheric glow, cinematic sci-fi mood" class="w-full h-full object-cover opacity-30 mix-blend-screen" data-alt="Deep space vista with subtle distant stars, icy nebulae, cold blue atmospheric glow, cinematic sci-fi mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtgcR6B58fQe7DQodLoQLR1Nm7HzhqEYpgSKUYb95zeLFfXGA_-_qfI8kgDodBSMzizfsZePplEfDbcMQs9RT6eeuvGT36f708ZwU2y5oXvLrHvedX7CmJUaqe47V_4yFrwAoIlIXh3k3vsRy1aH5CHs3uv3URwWLbqmoQbLx6Yo0Y2A5LFTDjdNYbOGgi0QmUQ1qoXzH_Vsci926-38PJee_ZEzGZxt9gWlr-lnuSK-eRoUrnguOWwlGiVwmMlqpmUEzyTsRGZN0"/>
+<!-- Subtle Gradient Overlay to ensure text readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/40 to-surface z-10"></div>
+</div>
+<!-- Hero Content (Centered, Asymmetric internal elements) -->
+<section class="relative z-20 container mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center justify-center min-h-[716px] text-center">
+<!-- Metadata Label -->
+<div class="mb-8 px-4 py-1 border border-outline-variant/15 rounded-DEFAULT text-label-sm font-label text-secondary tracking-widest uppercase inline-block backdrop-blur-sm bg-surface-container-lowest/30">
+                Sector 07 // Archival Entry
+            </div>
+<!-- Main Title -->
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-primary-fixed leading-none mb-6">
+                The Longest Night
+            </h1>
+<!-- Subtitle & Narrative -->
+<div class="max-w-2xl mx-auto space-y-4 mb-12">
+<p class="font-body text-xl md:text-2xl text-on-surface-variant font-light">
+                    An interactive artefact based on Liu Cixin’s <span class="italic text-inverse-surface">The Wandering Earth</span>
+</p>
+<p class="font-body text-lg text-secondary opacity-80">
+                    Five moments. Five decisions. One wandering planet.
+                </p>
+</div>
+<!-- Primary CTA Area -->
+<div class="flex flex-col items-center gap-6">
+<!-- Glowing CTA Button -->
+<button class="group relative px-8 py-4 bg-primary-container text-on-primary-container font-headline font-semibold text-lg tracking-wide rounded-DEFAULT hover:bg-primary-fixed-dim transition-all duration-300 overflow-hidden shadow-[0_0_15px_rgba(160,233,255,0.15)] hover:shadow-[0_0_25px_rgba(160,233,255,0.3)]">
+<span class="relative z-10 flex items-center gap-2">
+                        Enter the Archive
+                        <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</span>
+<!-- Internal Glow Effect -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
+</button>
+<!-- Secondary Academic Note -->
+<span class="font-label text-xs text-outline tracking-wider uppercase">
+                    For GENS4015 Final Project
+                </span>
+</div>
+</section>
+<!-- Aesthetic Structural Element (Data Scrubber metaphor) -->
+<div class="relative z-20 container mx-auto px-12 mt-12 mb-24 max-w-4xl opacity-60">
+<div class="h-[1px] w-full bg-outline-variant/30 flex items-center relative">
+<div class="absolute left-1/3 w-[2px] h-4 bg-primary-fixed shadow-[0_0_8px_#a0e9ff]"></div>
+<div class="absolute right-0 w-1/4 h-[1px] bg-gradient-to-r from-outline-variant/50 to-transparent"></div>
+</div>
+<div class="flex justify-between mt-2 font-label text-[10px] text-outline uppercase tracking-widest">
+<span>Initiation</span>
+<span>Deceleration</span>
+<span>Escape Velocity</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto border-t border-[#3f484b]/15 flex flex-col md:flex-row justify-between items-center px-12 gap-6 dark:bg-[#111318] text-[#A0E9FF] font-['Inter'] text-[10px] uppercase tracking-[0.2em] relative z-20">
+<div class="opacity-80 hover:opacity-100 transition-colors cursor-pointer">
+            © THE SPECULATIVE ARCHIVE // SECTOR 07
+        </div>
+<div class="flex gap-8 text-[#3f484b]">
+<a class="hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Methodology</a>
+<a class="hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Data Privacy</a>
+<a class="hover:text-[#f4fcff] transition-colors opacity-80 hover:opacity-100" href="#">Technical Records</a>
+</div>
+<div class="font-['Space_Grotesk'] text-sm text-[#e2e2e8] opacity-80 hover:opacity-100 cursor-pointer">
+            THE LONGEST NIGHT
+        </div>
+</footer>
+</body></html>
