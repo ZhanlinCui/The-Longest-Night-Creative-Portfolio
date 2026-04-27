@@ -99,7 +99,7 @@ export function ArchiveHub() {
         </aside>
         <section className="radial-bg relative flex min-h-[600px] w-full items-center justify-center overflow-hidden bg-surface md:w-2/3 lg:w-3/4">
           <img
-            src="/media/Scene5/5.2.png"
+            src="/media/Readme.png"
             alt=""
             className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-20 mix-blend-screen"
             aria-hidden

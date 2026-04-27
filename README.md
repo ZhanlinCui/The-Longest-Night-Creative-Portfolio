@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="web/public/media/landingpage.png" alt="The Longest Night landing visual" width="100%" />
+  <img src="web/public/media/Readme.png" alt="The Longest Night landing visual" width="100%" />
 </p>
 
 <h1 align="center">The Longest Night</h1>
