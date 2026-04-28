@@ -5,35 +5,6 @@ import { SiteFooter } from '../components/SiteFooter'
 import { SiteNav } from '../components/SiteNav'
 import { cn } from '../lib/cn'
 
-const nodeLayout: Record<
-  number,
-  { className: string; align: 'left' | 'right' }
-> = {
-  1: {
-    className:
-      'top-1/2 left-1/2 -translate-x-[250px] -translate-y-[150px]',
-    align: 'left',
-  },
-  2: {
-    className:
-      'top-1/2 left-1/2 translate-x-[150px] -translate-y-[250px]',
-    align: 'right',
-  },
-  3: {
-    className: 'top-1/2 left-1/2 translate-x-[350px] translate-y-[50px]',
-    align: 'right',
-  },
-  4: {
-    className: 'top-1/2 left-1/2 translate-x-[100px] translate-y-[350px]',
-    align: 'left',
-  },
-  5: {
-    className:
-      'top-1/2 left-1/2 -translate-x-[300px] translate-y-[200px]',
-    align: 'right',
-  },
-}
-
 export function ArchiveHub() {
   const { completed, completedCount, isSceneUnlocked, allComplete } = useProgress()
 
@@ -97,99 +68,111 @@ export function ArchiveHub() {
             ) : null}
           </div>
         </aside>
-        <section className="radial-bg relative flex min-h-[600px] w-full items-center justify-center overflow-hidden bg-surface md:w-2/3 lg:w-3/4">
+        <section className="relative flex min-h-[720px] w-full overflow-hidden bg-surface md:w-2/3 lg:w-3/4">
           <img
             src="/media/scence selection.png"
             alt=""
-            className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-24 mix-blend-screen"
+            className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-30 mix-blend-screen"
             aria-hidden
           />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(12,14,18,0.32)_0%,rgba(12,14,18,0.7)_50%,rgba(12,14,18,0.92)_100%)]" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-surface/40 via-surface/10 to-surface/30" />
-          <div className="orbit-line h-[300px] w-[300px]" />
-          <div className="orbit-line h-[500px] w-[500px]" />
-          <div className="orbit-line h-[700px] w-[700px]" />
-          <div className="orbit-line h-[900px] w-[900px] opacity-50" />
-          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-            <div className="glow-line mb-2 h-4 w-4 rotate-45 rounded-sm bg-primary-fixed" />
-            <span className="font-label text-[10px] uppercase tracking-[0.2em] text-primary-fixed">
-              Scene Index
-            </span>
-          </div>
-          {scenes.map((s) => {
-            const layout = nodeLayout[s.id]
-            const unlocked = isSceneUnlocked(s.id)
-            const done = completed.has(s.id)
-            const rowReverse = layout.align === 'right'
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-surface/95 via-surface/72 to-surface/50" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/35" />
 
-            const inner = (
-              <>
-                <div
-                  className={cn(
-                    'relative flex items-center justify-center overflow-hidden rounded-sm border backdrop-blur-md transition-all duration-300',
-                    unlocked
-                      ? 'h-12 w-12 border-primary-container bg-primary-container/10 hover:bg-primary-container/20'
-                      : 'h-10 w-10 border-outline-variant/30 bg-surface-container-high opacity-50',
-                  )}
-                >
-                  {unlocked ? (
-                    <>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-primary-container/5" />
-                      <span className="font-mono font-bold text-primary-fixed">{s.roman}</span>
-                      <div className="glow-line absolute bottom-0 left-0 h-0.5 w-full bg-primary-container" />
-                    </>
-                  ) : (
-                    <span className="material-symbols-outlined text-sm text-outline">lock</span>
-                  )}
-                </div>
-                <div className={cn('flex flex-col', rowReverse && 'items-end text-right')}>
-                  <span className="font-label mb-1 text-xs uppercase tracking-wider text-outline">
-                    {unlocked ? (done ? 'COMPLETED' : 'AVAILABLE') : `SCENE ${s.roman}`}
-                  </span>
-                  <span
-                    className={cn(
-                      'font-headline text-lg text-on-surface',
-                      !unlocked && 'text-base text-on-surface-variant',
-                    )}
-                  >
-                    {s.title}
-                  </span>
-                </div>
-              </>
-            )
-
-            return (
-              <div
-                key={s.id}
-                className={cn(
-                  'absolute left-1/2 top-1/2 z-20 flex items-center gap-4',
-                  layout.className,
-                  rowReverse && 'flex-row-reverse',
-                  !unlocked && 'opacity-50',
-                )}
-              >
-                {unlocked ? (
-                  <Link to={`/scene/${s.id}`} className="group flex items-center gap-4">
-                    {inner}
-                  </Link>
-                ) : (
-                  <div className="flex items-center gap-4">{inner}</div>
-                )}
+          <div className="relative z-10 flex w-full flex-col justify-center px-6 py-12 md:px-10 lg:px-16">
+            <div className="mb-10 max-w-3xl">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-10 bg-primary-container/60" />
+                <span className="font-label text-xs uppercase tracking-[0.22em] text-primary-fixed">
+                  Mission Sequence
+                </span>
               </div>
-            )
-          })}
-          <svg
-            className="pointer-events-none absolute inset-0 h-full w-full opacity-20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M 300 400 Q 500 200 700 400"
-              fill="none"
-              stroke="#a0e9ff"
-              strokeDasharray="4 4"
-              strokeWidth="1"
-            />
-          </svg>
+              <h2 className="font-headline text-3xl leading-tight text-primary md:text-5xl">
+                Follow the archive in order.
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-on-surface-variant md:text-base">
+                Complete each visual chapter to unlock the next stage of Earth's journey.
+                Start with the highlighted scene, then continue downward.
+              </p>
+            </div>
+
+            <div className="relative max-w-4xl">
+              <div className="absolute bottom-8 left-6 top-8 hidden w-px bg-outline-variant/30 md:block" />
+              <div className="grid gap-4">
+                {scenes.map((s) => {
+                  const unlocked = isSceneUnlocked(s.id)
+                  const done = completed.has(s.id)
+                  const active = unlocked && !done
+
+                  const card = (
+                    <div
+                      className={cn(
+                        'relative flex min-h-24 items-center gap-4 rounded-sm border p-4 text-left backdrop-blur-xl transition-all md:gap-6 md:p-5',
+                        done &&
+                          'border-primary-container/25 bg-surface-container-low/65 text-on-surface',
+                        active &&
+                          'border-primary-container/70 bg-primary-container/12 shadow-[0_0_28px_rgba(160,233,255,0.16)]',
+                        !unlocked &&
+                          'border-outline-variant/20 bg-surface-container-lowest/55 opacity-55',
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          'relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border font-mono text-base font-bold md:h-14 md:w-14',
+                          unlocked
+                            ? 'border-primary-container bg-primary-container/12 text-primary-fixed'
+                            : 'border-outline-variant/40 bg-surface-container-high text-outline',
+                        )}
+                      >
+                        {unlocked ? s.roman : (
+                          <span className="material-symbols-outlined text-base">lock</span>
+                        )}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="mb-1 flex flex-wrap items-center gap-3">
+                          <span className="font-label text-[10px] uppercase tracking-[0.2em] text-outline">
+                            Step {String(s.id).padStart(2, '0')}
+                          </span>
+                          <span
+                            className={cn(
+                              'font-label text-[10px] uppercase tracking-[0.18em]',
+                              done && 'text-primary-container',
+                              active && 'text-primary-fixed',
+                              !unlocked && 'text-outline',
+                            )}
+                          >
+                            {done ? 'Completed' : active ? 'Start here' : 'Locked'}
+                          </span>
+                        </div>
+                        <h3 className="font-headline text-xl leading-tight text-on-surface md:text-2xl">
+                          {s.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-on-surface-variant">
+                          {s.chapterLabel}
+                        </p>
+                      </div>
+                      <span
+                        className={cn(
+                          'material-symbols-outlined shrink-0 text-lg',
+                          unlocked ? 'text-primary-container' : 'text-outline',
+                        )}
+                        aria-hidden
+                      >
+                        {done ? 'check' : active ? 'arrow_forward' : 'lock'}
+                      </span>
+                    </div>
+                  )
+
+                  return unlocked ? (
+                    <Link key={s.id} to={`/scene/${s.id}`} className="group block">
+                      {card}
+                    </Link>
+                  ) : (
+                    <div key={s.id}>{card}</div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <SiteFooter />
